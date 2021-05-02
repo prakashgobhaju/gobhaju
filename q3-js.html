@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assume we have a SPAN element with some texts in it. Create a clipboard copy feature for that SPAN without
+        using any library</title>
+</head>
+
+<body>
+
+    <span id="copyText">These are the text to be copied in clipboard</span>
+    <button id="copyToClipBoard" onclick="copyToClipBoard()">Copy</button>
+    <script>
+
+        function copyToClipBoard() {
+            var range = document.createRange();
+            range.selectNode(document.querySelector('#copyText'));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+        }
+
+    </script>
+</body>
+
+</html>

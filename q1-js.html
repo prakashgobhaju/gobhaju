@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Q.1</title>
+    <script src="library.js"></script>
+</head>
+
+<body>
+    <div class="content">
+
+    </div>
+
+    <div class="content">
+
+    </div>
+
+    <div id="data" data-a="here" data-b="there"></div>
+
+    <div id="parent"></div>
+
+    <form>
+        <input type="text" name="fruit" value="apple" /> <br />
+
+        car <input type="checkbox" name="vehicle" value="Car" checked><br />
+        cycle <input type="checkbox" name="vehicle" value="Cycle"><br />
+        Motor cycle <input type="checkbox" name="vehicle" value="Motor Cycle" checked><br />
+        Bus <input type="checkbox" name="vehicle" value="Bus"><br />
+
+        Furniture:
+        <select name="furniture">
+            <option value="chair">Chair</option>
+            <option value="Sofa" selected>Sofa</option>
+            <option value="Tables">Tables</option>
+        </select>
+    </form>
+
+    <script>
+        // Q.1 a
+        GobhajuLib.changeClass('content', 'body')
+
+        //  Q.1 b
+        console.log(GobhajuLib.getDataSet('#data'));
+
+        // Q.1 c
+        GobhajuLib.insertDOM('#parent', 'span');
+
+        // Q.1 d
+        GobhajuLib.ajax("GET", "http://localhost:8888/ajax-example.php", "");
+        //let params = {'name':'hello','sex':'femelae'}
+        //GobhajuLib.ajax("POST","http://localhost:8888/ajax-example.php",params);
+
+        // Q.1 e Get and set values from input box/checkbox/select dropdown
+
+        console.log(GobhajuLib.getInputValue("fruit"));
+
+        GobhajuLib.setInputValue("fruit", "mango");
+
+        console.log(GobhajuLib.getCheckBoxValue("vehicle"));
+
+        GobhajuLib.setCheckBoxValue("vehicle", "Cycle");
+
+
+        console.log(GobhajuLib.getSelectValue("furniture"));
+
+        GobhajuLib.setSelectValue("furniture", "Tables");
+
+
+    </script>
+</body>
+
+</html>

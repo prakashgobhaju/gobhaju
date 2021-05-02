@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Q.2</title>
+</head>
+
+<body>
+
+    <script>
+        var params1 = {age:11,name:'apple'};
+        var params2 = {age:13,name:'orange'};
+        var params3 = {age:14,name:'mango'};
+        Promise.all([
+            fetch("http://localhost:8888/ajax-example.php", { method: 'POST', body: JSON.stringify(params1) }),
+            fetch("http://localhost:8888/ajax-example.php", { method: 'POST', body: JSON.stringify(params2)  }),
+            fetch("http://localhost:8888/ajax-example.php", { method: 'POST', body: JSON.stringify(params3)  })
+        ]).then(allResponses => {
+            let response1 = allResponses[0]
+            let response2 = allResponses[1]
+            let response3 = allResponses[2]
+            console.log(response1);
+        })
+
+    </script>
+</body>
+
+</html>

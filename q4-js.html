@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two way binding</title>
+</head>
+
+<body>
+
+    <input type="text" id="age" value="13">
+
+    <script>
+        var person = (function (el) {
+            return {
+                set age(v) {
+                    el.value = v;
+                },
+                get age() {
+                    return el.value;
+                }
+            };
+        })(document.getElementById("age"));
+        console.log('one', person.age);
+
+        person.age = 55;
+        console.log('two', person.age);
+
+    </script>
+</body>
+
+</html>
